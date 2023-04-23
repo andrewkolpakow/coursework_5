@@ -119,7 +119,7 @@ class EnemyUnit(BaseUnit):
         функция _count_damage(target
         """
 
-        if not self.is_skill_used and self.stamina >= self.unit_class.skill.stamina and randint(0,100) < 10:
+        if not self._is_skill_used and self.stamina >= self.unit_class.skill.stamina and randint(0,100) < 10:
             return self.use_skill(target)
 
         if self.stamina < self.weapon.stamina_per_hit:

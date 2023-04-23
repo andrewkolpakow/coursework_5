@@ -8,8 +8,8 @@ from unit import BaseUnit, PlayerUnit, EnemyUnit
 app = Flask(__name__)
 
 heroes = {
-    "player": BaseUnit,
-    "enemy": BaseUnit
+    "player": ...,
+    "enemy": ...,
 }
 
 arena = Arena()
