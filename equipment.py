@@ -1,9 +1,9 @@
-from dataclasses import dataclass
-from typing import List
-from random import uniform
-import marshmallow_dataclass
-import marshmallow
 import json
+from dataclasses import dataclass
+from random import uniform
+from typing import Optional
+
+import marshmallow_dataclass
 
 
 @dataclass
@@ -39,19 +39,19 @@ class Equipment:
     def __init__(self):
         self.equipment = self._get_equipment_data()
 
-    def get_weapon(self, weapon_name) -> Weapon:
+    def get_weapon(self, weapon_name) -> Optional[Weapon]:
         '''возвращает объект оружия по имени'''
         for weapon in self.equipment.weapons:
             if weapon.name == weapon_name:
                 return weapon
-            return None
+        return None
 
-    def get_armor(self, armor_name) -> Armor:
+    def get_armor(self, armor_name) -> Optional[Armor]:
         '''возвращает объект брони по имени'''
         for armor in self.equipment.armors:
             if armor.name == armor_name:
                 return armor
-            return None
+        return None
 
     def get_weapons_names(self) -> list:
         '''возвращаем список с оружием'''
